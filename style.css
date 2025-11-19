@@ -1,3 +1,12 @@
+/* Variables */
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+}
+
 /* Resets */
 *,
 *::before,
@@ -10,7 +19,9 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
 }
+
 img,
 picture,
 video,
@@ -26,19 +37,6 @@ select {
   font: inherit;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-p {
-  text-wrap: pretty;
-}
 h1,
 h2,
 h3,
@@ -55,5 +53,115 @@ h6 {
 @media (prefers-reduced-motion: no-preference) {
   html {
     interpolate-size: allow-keywords;
+  }
+}
+
+.container {
+  width: min(100% - 2rem, 375px);
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 3.275rem 0;
+}
+
+.hero__title {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.hero__title--thick {
+  font-weight: 700;
+}
+
+.hero__para {
+  padding: 1.25rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.cards {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.card {
+  border-radius: 0.25rem;
+  padding: 0.25rem 1.5rem 0.75rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card__title {
+  font-size: 1.25rem;
+  padding: 0.95rem 0rem 0.25rem 0rem;
+}
+
+.card__para {
+  font-size: 0.9rem;
+}
+
+.card__image {
+  margin-left: auto;
+  padding: 2rem 0;
+}
+
+.cards__separator .card {
+  margin: 2.5rem 0;
+}
+
+.card--supervisor {
+  border-top: 5px solid var(--cyan);
+}
+
+.card--team {
+  border-top: 5px solid var(--red);
+}
+
+.card--karma {
+  border-top: 5px solid var(--orange);
+}
+
+.card--calculator {
+  border-top: 5px solid var(--blue);
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: min(100% - 2rem, 1440px);
+  }
+
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .card {
+    max-width: 345px;
+  }
+
+  .card__title {
+    padding: 1.45rem 0 0 0;
+  }
+
+  .hero {
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top: 2.75rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .hero__title {
+    font-size: 2.25rem;
+  }
+
+  .hero__para {
+    max-width: 550px;
+    padding: 1rem 0.5rem;
+    margin: 0 auto;
   }
 }
